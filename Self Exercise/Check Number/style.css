@@ -1,0 +1,23 @@
+body {
+  background-color: powderblue;
+  transition: background-color 0.5s ease;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+button {
+  color: green;
+  margin: 5px;
+}
+.success {
+  background-color: lightgreen;
+  animation: confetti 1s infinite;
+}
+
+@keyframes confetti {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
