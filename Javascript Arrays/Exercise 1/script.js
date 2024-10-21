@@ -1,78 +1,47 @@
-const students = [];
-const marks = [];
-let maxStudents = 5;
+//declare array for values to be stored
+let valueArray = [];
+let modalDisplay = false;
+let output = document.getElementById('output');
 
-document.getElementById('btnEnter').addEventListener('click', function() {
-    students = [];
-    document.getElementById('inputSection').style.display = 'block';
-});
+let btnAddValue = document.getElementById('btnAddToArray');
+let btnRemoveValue = document.getElementById('btnRemoveFromArray');
+let btnSortArray = document.getElementById('btnSortArray');
+let btnDisplayArray = document.getElementById('btnDisplayArray');
+let modalInput = document.getElementById('modalInput');
+let overlay = document.getElementById('overlay');
 
-document.getElementById('btnAdd').addEventListener('click', function() {
-    if (students.length < maxStudents) {
-        const name = document.getElementById('studentName').value;
-        const mark = parseInt(document.getElementById('examMark').value);
+btnDisplayArray.addEventListener('click', displayArray);
+btnAddValue.addEventListener('click', displayModal);
+overlay.addEventListener('click', hideModal);
 
-        if (name && !isNaN(mark)) {
-            students.push(name);
-            marks.push(mark);
-            document.getElementById('studentName').value = '';
-            document.getElementById('examMark').value = '';
+function addValueToArray() {
+    let valueToAdd = document.getElementById('valueToAdd').value;
+    valueArray.push(valueToAdd);
+    hideModal();
+}
 
-            if (students.length === maxStudents) {
-                document.getElementById('btnDisplay').disabled = false;
-            }
-        } else {
-            alert('Please enter valid name and mark.');
-        }
-    } else {
-        alert('Maximum of 5 students reached.');
+
+function displayModal() {
+    if (!modalDisplay) {
+    modalInput.style.display ="block";
+    overlay.style.display = "block";
+    modalDisplay = true;
+    let btnAdd = document.getElementById('btnAddValue');
+    btnAdd.addEventListener('click', addValueToArray);
     }
-});
+}
 
-document.getElementById('btnDisplay').addEventListener('click', function() {
-    let total = 0;
-    let max = marks[0];
-    let min = marks[0];
-    let maxIndex = 0;
-    let minIndex = 0;
-
-    for (let i = 0; i < marks.length; i++) {
-        total += marks[i];
-        if (marks[i] > max) {
-            max = marks[i];
-            maxIndex = i;
-        }
-        if (marks[i] < min) {
-            min = marks[i];
-            minIndex = i;
-        }
+function hideModal() {
+    if (modalDisplay) {
+    modalInput.style.display = "none";
+    overlay.style.display = "none";
+    modalDisplay = false;
     }
+}
 
-    const average = total / marks.length;
-    const displayText = `
-        Grade Analysis
-        Average: ${average.toFixed(2)}
-        Min: ${min} (Name: ${students[minIndex]})
-        Max: ${max} (Name: ${students[maxIndex]})
-    `;
-
-    document.getElementById('output').innerText = displayText;
-});
-
-document.getElementById('btnLoadData').addEventListener('click', function() {
-    const testData = [
-        { name: "David", mark: 56 },
-        { name: "Rosmary", mark: 76 },
-        { name: "Amina", mark: 91 },
-        { name: "Terry", mark: 78 },
-        { name: "Bilal", mark: 47 }
-    ];
-
-    testData.forEach(student => {
-        students.push(student.name);
-        marks.push(student.mark);
-    });
-
-    alert("Names and Grades Loaded");
-    document.getElementById('btnDisplay').disabled = false;
-});
+function displayArray() {
+    output.innerHTML = 'grgegreg'
+    for (let i = 0; i < valueArray.length; i++) {
+        output.innerHTML = output.innerHTML + '<br>' + valueArray[i];
+    }
+}
