@@ -1,8 +1,13 @@
+/* -----------------------------------------
+TEMPLATE CODE
+-------------------------------------------*/
+
 //declare array for values to be stored
 let valueArray = [];
 let modalDisplay = false;
 let output = document.getElementById('output');
 
+//assign controls to variables
 let btnAddValue = document.getElementById('btnAddToArray');
 let btnRemoveValue = document.getElementById('btnRemoveFromArray');
 let btnSortArray = document.getElementById('btnSortArray');
@@ -10,17 +15,12 @@ let btnDisplayArray = document.getElementById('btnDisplayArray');
 let modalInput = document.getElementById('modalInput');
 let overlay = document.getElementById('overlay');
 
+//add event listeners for form controls
 btnDisplayArray.addEventListener('click', displayArray);
 btnAddValue.addEventListener('click', displayModal);
 overlay.addEventListener('click', hideModal);
 
-function addValueToArray() {
-    let valueToAdd = document.getElementById('valueToAdd').value;
-    valueArray.push(valueToAdd);
-    hideModal();
-}
-
-
+//code to display and hide modal
 function displayModal() {
     if (!modalDisplay) {
     modalInput.style.display ="block";
@@ -39,9 +39,17 @@ function hideModal() {
     }
 }
 
+/* -----------------------------------------
+END TEMPLATE CODE
+-------------------------------------------*/
+
+//function to add a value to the array
+function addValueToArray() {
+    let valueToAdd = document.getElementById('valueToAdd').value;
+    //add code to add a value to the array
+    hideModal();
+}
+
 function displayArray() {
-    output.innerHTML = 'grgegreg'
-    for (let i = 0; i < valueArray.length; i++) {
-        output.innerHTML = output.innerHTML + '<br>' + valueArray[i];
-    }
+
 }

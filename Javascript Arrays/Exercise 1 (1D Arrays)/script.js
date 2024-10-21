@@ -1,5 +1,5 @@
-const students = [];
-const marks = [];
+let students = [];
+let marks = [];
 let maxStudents = 5;
 
 document.getElementById('btnEnter').addEventListener('click', function() {
