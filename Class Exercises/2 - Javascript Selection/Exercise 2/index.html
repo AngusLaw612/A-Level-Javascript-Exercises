@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Pay Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Worker Pay Calculator</h1>
+        
+        <label for="txtType">Worker Type (S for Skilled, M for Manual):</label>
+        <input type="text" id="txtType" maxlength="1" placeholder="Enter 'S' or 'M'">
+        
+        <label for="txtHours">Hours Worked:</label>
+        <input type="number" id="txtHours" placeholder="Enter hours worked">
+        
+        <button id="btnCalculate">Calculate Pay</button>
+        
+        <p id="lblDisplay"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
