@@ -1,4 +1,4 @@
-## Shopping Cart Total
+## Exercise 5: Shopping Cart Total
 
 __Task:__
 

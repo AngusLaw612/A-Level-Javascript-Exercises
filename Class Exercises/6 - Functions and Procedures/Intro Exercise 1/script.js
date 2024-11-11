@@ -1,6 +1,8 @@
 // Framework: Function to calculate the area of a rectangle
 function calculateArea(width, height) {
     // TODO: Fill in the logic to calculate and return the area
+    area = width * height
+    return area
 }
 
 // Event listener for the button

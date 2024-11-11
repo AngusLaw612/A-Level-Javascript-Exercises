@@ -1,4 +1,4 @@
-## Grade Calculator
+## Exercise 4: Grade Calculator
 
 __Task:__
 

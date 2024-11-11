@@ -1,4 +1,4 @@
-## Quiz Score Tracker
+## Exercise 6: Quiz Score Tracker
 
 __Task:__
 
