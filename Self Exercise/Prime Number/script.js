@@ -10,7 +10,7 @@ function prime( minimum , maximum) {
     
     for (let i = minimum ; i <= maximum ; i++) {
         
-        for  (let n = 0 ; n <= maximum ; n++) {
+        for  (let n = 2 ; n <= maximum ; n++) {
             let turn = 0
             
             if (i % n !== 0) {
