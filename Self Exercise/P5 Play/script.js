@@ -2,12 +2,12 @@ let ball, floors = [], tubes = [], bars = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  world.gravity.y = 10;
+  world.gravity.y = 2;
 
   ball = new Sprite();
-  ball.diameter = 25;
-  ball.x = 80;
-  ball.y = 30;
+  ball.diameter = 10;
+  ball.x = 474;
+  ball.y = 160;
 
   // Define floor properties
   let floorProperties = [
@@ -101,6 +101,35 @@ function setup() {
     { x: 531.25, y: (185+5*4*12.5), diameter: 12.5 },
     { x: 531.25, y: (185+6*4*12.5), diameter: 12.5 },
     { x: 531.25, y: (185+7*4*12.5), diameter: 12.5 },
+
+    { x: 418.75, y: (185+4*12.5), diameter: 12.5 },
+    { x: 418.75, y: (185+2*4*12.5), diameter: 12.5 },
+    { x: 418.75, y: (185+3*4*12.5), diameter: 12.5 },
+    { x: 418.75, y: (185+4*4*12.5), diameter: 12.5 },
+    { x: 418.75, y: (185+4*4*12.5), diameter: 12.5 },
+    { x: 418.75, y: (185+5*4*12.5), diameter: 12.5 },
+    { x: 418.75, y: (185+6*4*12.5), diameter: 12.5 },
+    { x: 418.75, y: (185+7*4*12.5), diameter: 12.5 },
+    
+    { x: 550, y: (160+2*4*12.5), diameter: 12.5 },
+    { x: 550, y: (160+3*4*12.5), diameter: 12.5 },
+    { x: 550, y: (160+4*4*12.5), diameter: 12.5 },
+    { x: 550, y: (160+5*4*12.5), diameter: 12.5 },
+    { x: 550, y: (160+6*4*12.5), diameter: 12.5 },
+    { x: 550, y: (160+7*4*12.5), diameter: 12.5 },
+    { x: 550, y: (160+8*4*12.5), diameter: 12.5 },
+
+    { x: 400, y: (160+2*4*12.5), diameter: 12.5 },
+    { x: 400, y: (160+3*4*12.5), diameter: 12.5 },
+    { x: 400, y: (160+4*4*12.5), diameter: 12.5 },
+    { x: 400, y: (160+5*4*12.5), diameter: 12.5 },
+    { x: 400, y: (160+6*4*12.5), diameter: 12.5 },
+    { x: 400, y: (160+7*4*12.5), diameter: 12.5 },
+    { x: 400, y: (160+8*4*12.5), diameter: 12.5 },
+
+
+
+
   ];
 
   for (let props of barProperties) {
