@@ -9,14 +9,12 @@ function setup() {
   ball.x = 474;
   ball.y = 160;
 
-  // Define floor properties
   let floorProperties = [
     { x: 650, y: 350, w: 512.5, h: 2, rotation: 53.13 },
     { x: 300, y: 350, w: 512.5, h: 2, rotation: -53.13 },
     { x: 475, y: 566.5063509, w: 650, h: 2, rotation: 0 }
   ];
 
-  // Create floor sprites based on properties
   for (let props of floorProperties) {
     let floor = new Sprite();
     floor.x = props.x;
