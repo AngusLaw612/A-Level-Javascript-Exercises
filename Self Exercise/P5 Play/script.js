@@ -1,13 +1,15 @@
 let ball, floors = [], tubes = [], bars = [];
-
+l
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  world.gravity.y = 2;
+  world.gravity.y = 100 ;
 
   ball = new Sprite();
   ball.diameter = 12.5;
   ball.x = 474;
   ball.y = 160;
+
+
 
   let floorProperties = [
     { x: 650, y: 350, w: 512.5, h: 2, rotation: 53.13 },
@@ -48,8 +50,8 @@ function setup() {
   }
   
   let tubeProperties = [
-    { x: 500, y: 108.49364905, w: 60, h: 2, rotation: 90 },
-    { x: 450, y: 108.49364905, w: 60, h: 2, rotation: 90 }
+    { x: 562.5, y: 90.49364905, w: 175, h: 2, rotation: -40 },
+    { x: 385.5, y: 90.49364905, w: 175, h: 2, rotation: 40 }
   ];
 
   for (let props of tubeProperties) {
@@ -63,7 +65,7 @@ function setup() {
     tubes.push(tube);
   }
 
-  let barProperties = [
+  let barProperties = [ 
     { x: 475, y: 160, diameter: 12.5 },
     { x: 475, y: (160+4*12.5), diameter: 12.5 },
     { x: 475, y: (160+2*4*12.5), diameter: 12.5 },
@@ -295,9 +297,20 @@ function draw() {
   for (let tube of tubes) {
     tube.draw();
   }
-
+ 
   // Draw the bars
   for (let bar of bars) {
     bar.draw();
   }
+}
+
+function keyPressed() {
+  if (key === 'd' || key === 'a') { 
+    ball = new Sprite(); 
+    ball.diameter = 12.5;
+    ball.x = 475; 
+    ball.y = 110 ; 
+  }
+
+ 
 }
