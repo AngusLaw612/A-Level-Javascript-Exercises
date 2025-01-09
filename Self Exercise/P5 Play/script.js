@@ -2,19 +2,22 @@ let ball, floors = [], tubes = [], bars = [];
 l
 function setup() {
   createCanvas(windowWidth, windowHeight);
+
+  world.gravity.y = 9.81;
+
   world.gravity.y = 100 ;
 
   ball = new Sprite();
   ball.diameter = 12.5;
   ball.x = 474;
-  ball.y = 160;
+  ball.y = 0;
 
 
 
   let floorProperties = [
     { x: 650, y: 350, w: 512.5, h: 2, rotation: 53.13 },
     { x: 300, y: 350, w: 512.5, h: 2, rotation: -53.13 },
-    { x: 475, y: 566.5063509+50, w: 650, h: 2, rotation: 0 },
+    { x: 475, y: 566.5063509+50, w: 1000, h: 2, rotation: 0 },
     { x: 475, y: 25+(160+8*4*12.5), w: 50, h: 10, rotation: 90 },
     { x: 437.5, y: 25+(160+8*4*12.5), w: 50, h: 10, rotation: 90 },
     { x: 400, y: 25+(160+8*4*12.5), w: 50, h: 10, rotation: 90 },
@@ -50,8 +53,8 @@ function setup() {
   }
   
   let tubeProperties = [
-    { x: 562.5, y: 90.49364905, w: 175, h: 2, rotation: -40 },
-    { x: 385.5, y: 90.49364905, w: 175, h: 2, rotation: 40 }
+    { x: 562.5, y: 90.49364905, w: 200, h: 2, rotation: -40 },
+    { x: 385.5, y: 90.49364905, w: 200, h: 2, rotation: 40 }
   ];
 
   for (let props of tubeProperties) {
@@ -66,7 +69,6 @@ function setup() {
   }
 
   let barProperties = [ 
-    { x: 475, y: 160, diameter: 12.5 },
     { x: 475, y: (160+4*12.5), diameter: 12.5 },
     { x: 475, y: (160+2*4*12.5), diameter: 12.5 },
     { x: 475, y: (160+3*4*12.5), diameter: 12.5 },
@@ -76,7 +78,6 @@ function setup() {
     { x: 475, y: (160+7*4*12.5), diameter: 12.5 },
     { x: 475, y: (160+8*4*12.5), diameter: 12.5 },
 
-    { x: 456.25, y: (185), diameter: 12.5 },
     { x: 456.25, y: (185+4*12.5), diameter: 12.5 },
     { x: 456.25, y: (185+2*4*12.5), diameter: 12.5 },
     { x: 456.25, y: (185+3*4*12.5), diameter: 12.5 },
@@ -86,7 +87,6 @@ function setup() {
     { x: 456.25, y: (185+6*4*12.5), diameter: 12.5 },
     { x: 456.25, y: (185+7*4*12.5), diameter: 12.5 },
 
-    { x: 493.75, y: (185), diameter: 12.5 },
     { x: 493.75, y: (185+4*12.5), diameter: 12.5 },
     { x: 493.75, y: (185+2*4*12.5), diameter: 12.5 },
     { x: 493.75, y: (185+3*4*12.5), diameter: 12.5 },
@@ -276,7 +276,7 @@ function setup() {
     let bar = new Sprite();
     bar.x = props.x;
     bar.y = props.y;
-    bar.diameter = props.diameter;
+    bar.diameter = props.diameter - 3;
     bar.collider = 'static';
     bars.push(bar);
   }
@@ -305,11 +305,17 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key === 'd' || key === 'a') { 
+  if (key === 'd') { 
     ball = new Sprite(); 
-    ball.diameter = 12.5;
-    ball.x = 475; 
-    ball.y = 110 ; 
+    ball.diameter = 14.5;
+    ball.x = 400; 
+    ball.y = 50 ; 
+  }
+  if (key === 'a') { 
+    ball = new Sprite(); 
+    ball.diameter = 14.5;
+    ball.x = 550; 
+    ball.y = 50 ; 
   }
 
  
