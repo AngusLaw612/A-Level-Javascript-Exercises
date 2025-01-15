@@ -1,24 +1,48 @@
-let car, wheelsFront, wheelsRear, axleFront, axleRear , ground, tube;
+let road , ball;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-  
+	createCanvas(windowWidth, windowHeight);
+
     world.gravity.y = 9.81;
 
-}  
+    road = new Sprite();
+    road.h = 10;
+    road.w = 1000;
+    road.x = 450;
+    road.y = 450;
+    road.color = "pink";
+    road.stroke = "red";
+    road.collider = 'static';
 
-let tubeProperties = [
-    { x: 562.5, y: 90.49364905, w: 200, h: 2, rotation: -40 },
-    { x: 385.5, y: 90.49364905, w: 200, h: 2, rotation: 40 }
-];
+    ball = new Sprite();
+    ball.d = 50;
+    ball.x = 450;
+    ball.y = 60;;
 
-for (let props of tubeProperties) {
-    let tube = new Sprite();
-    tube.x = props.x;
-    tube.y = props.y;
-    tube.w = props.w;
-    tube.h = props.h;
-    tube.collider = 'static';
-    tube.rotation = props.rotation;
-    tubes.push(tube);
-  }
+
+}
+
+function update() {
+	clear();
+
+	ball.speed = 3;
+	
+	if (kb.pressing('w')) {
+		ball.direction = -90;
+	} else if (kb.pressing('s')) {
+		ball.direction = 90;
+	} else if (kb.pressing('a')) {
+		ball.direction = 180;
+	} else if (kb.pressing('d')) {
+		ball.direction = 0;
+	} else {
+	  ball.speed = 0;
+	}
+}
+
+function draw() {
+    clear();
+  
+    road.draw();
+    ball.draw();
+}
