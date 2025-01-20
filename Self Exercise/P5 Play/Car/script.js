@@ -1,14 +1,7 @@
-let road , ball, ground ;
-
-async function pauseLoop() {
-  let waitTime = 100000;
-  for (let i = 0; i < 5; i++) {
-    console.log(i);
-    await new Promise(resolve => setTimeout(resolve, waitTime)); // Pause for 1 second
-    waitTime = waitTime - 10
-  }
-}
- 
+let acceleration = 0.5; // Adjust this value to control the acceleration rate
+let maxSpeed = 18; // Maximum speed the ball can reach
+let friction = 0.01 / 60; // Friction decrease per frame
+let currentAcceleration = 0;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -49,32 +42,46 @@ function update() {
 }
 
 function draw() {
-    clear();
-   
-    camera.x = ball.x 
-    camera.y = ball.y 
-
-
-    if (ball.colliding(ground))	{
-      if (kb.presses(' ')) {
-        ball.vel.y = 20;
-      }
-    }
-
-    if (kb.pressing('d')) {
-      j = 0
-      ball.vel.x = 0
-      for (let j = 0;  j < 100;  j = j + 0.05){
-        pauseLoop();
-        ball.vel.x = 3 + j;
-        
-    }
-   
-    }else if (kb.pressing('a')) {
-      ball.vel.x = -3;
+  clear();
+  
+  camera.x = ball.x;
+  camera.y = ball.y;
+  
+  if (ball.colliding(ground)) {
+    if (kb.presses(' ')) {
+      ball.vel.y = 20;
     }
   }
-
   
+  if (kb.pressing('d')) {
+    currentAcceleration = acceleration;
+    ball.vel.x += currentAcceleration;
+    if (ball.vel.x > maxSpeed) {
+      ball.vel.x = maxSpeed;
+    }
+  } else if (kb.pressing('a')) {
+    currentAcceleration = -acceleration;
+    ball.vel.x += currentAcceleration;
+    if (ball.vel.x < -maxSpeed) {
+      ball.vel.x = -maxSpeed;
+    }
+  } else {
+    // Apply friction to gradually slow down the ball when no key is pressed
+    if (ball.vel.x > 0) {
+      ball.vel.x -= friction;
+      if (ball.vel.x < 0) {
+        ball.vel.x = 0;
+      }
+    } else if (ball.vel.x < 0) {
+      ball.vel.x += friction;
+      if (ball.vel.x > 0) {
+        ball.vel.x = 0;
+      }
+    }
+  }
   
-
+  // Display the current speed on the screen
+  fill(0); // Set text color to black
+  textSize(16); // Set text size
+  text("Speed: " + abs(ball.vel.x).toFixed(2), 10, 30); // Display the speed at the top-left corner
+}
