@@ -1,5 +1,5 @@
-let acceleration = 0.5; // Adjust this value to control the acceleration rate
-let maxSpeed = 18; // Maximum speed the ball can reach
+let acceleration = 2; // Adjust this value to control the acceleration rate
+let maxSpeed = 180; // Maximum speed the ball can reach
 let friction = 0.01 / 60; // Friction decrease per frame
 let currentAcceleration = 0;
 
@@ -24,8 +24,8 @@ function setup() {
     ball.y = 60;
     ball.drag = 1
 
-   let grade = [[400, 0]];
-    for (let i = 0; i < 100; i++) {
+   let grade = [[4, 0]];
+    for (let i = 0; i < 10000; i++) {
       grade.push([random(50, 200), random(-30, 30)]);
     }
     ground = new Sprite(450, 450, grade, 's');
