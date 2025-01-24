@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.GPOG{
+    position: absolute;
+    top: 200px;
+    left: 10px;
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.WGPOG{
+    position: absolute;
+    top: 180px;
+    left: 10px;
+}
