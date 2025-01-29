@@ -4,16 +4,92 @@ body {
     color: #333;
 }
 
-.GPOG{
+.GPOG, .GWOC, .PetraImg, .ColosseumImg, .ChichenItzaImg, .MachuPicchuImg, .TajMahalImg, .ChristRedeemerImg {
     position: absolute;
-    top: 200px;
-    left: 10px;
-    max-width: 100%;
-    max-height: 400px;
+    width: 200px;
+    max-height: auto;
 }
 
-.WGPOG{
+.WGPOG, .WGWOC, .Petra, .Colosseum, .ChichenItza, .MachuPicchu, .TajMahal, .ChristRedeemer {
     position: absolute;
+}
+
+.WGPOG {
     top: 180px;
     left: 10px;
+}
+
+.GPOG {
+    top: 200px;
+    left: 10px;
+}
+
+.WGWOC {
+    top: 180px;
+    left: 200px;
+}
+
+.GWOC {
+    top: 200px;
+    left: 200px;
+}
+
+.Petra {
+    top: 180px;
+    left: 400px;
+}
+
+.PetraImg {
+    top: 200px;
+    left: 400px;
+}
+
+.Colosseum {
+    top: 180px;
+    left: 600px;
+}
+
+.ColosseumImg {
+    top: 200px;
+    left: 600px;
+}
+
+.ChichenItza {
+    top: 180px;
+    left: 800px;
+}
+
+.ChichenItzaImg {
+    top: 200px;
+    left: 800px;
+}
+
+.MachuPicchu {
+    top: 180px;
+    left: 1000px;
+}
+
+.MachuPicchuImg {
+    top: 200px;
+    left: 1000px;
+}
+
+.TajMahal {
+    top: 180px;
+    left: 1200px;
+}
+
+.TajMahalImg {
+    top: 200px;
+    left: 1200px;
+}
+
+.ChristRedeemer {
+    top: 180px;
+    left: 1400px;
+}
+
+.ChristRedeemerImg {
+    top: 200px;
+    left: 1400px;
 }
