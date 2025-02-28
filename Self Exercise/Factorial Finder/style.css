@@ -1,0 +1,33 @@
+body{
+    padding: 25px;
+    background-color: rgb(236, 190, 120);
+  }
+  .title {
+      color: #5C6AC4;
+  }
+  #text {
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+    border-width: thick;
+    border-color: rgb(135, 111, 243);
+    border-radius: 10px;
+    width: 425px;
+  }
+  #buttonInput{
+    background-color:rgb(0, 255, 34);
+    border-style: inset;
+    border-radius:5px;
+  }
+  #userinput{
+    border-radius:5px;
+  }
+  #outputBlock {
+    background-color: white;
+    border: 2px solid #5C6AC4;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 425px;
+}
