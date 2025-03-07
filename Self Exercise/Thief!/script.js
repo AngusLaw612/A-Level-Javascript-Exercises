@@ -14,9 +14,9 @@ function code(pin) {
             permutations.add(arr.join(''));
         } else {
             for (let i = start; i <= end; i++) {
-                [arr[start], arr[i]] = [arr[i], arr[start]]; // Swap
+                [arr[start], arr[i]] = [arr[i], arr[start]]; 
                 permute(arr, start + 1, end);
-                [arr[start], arr[i]] = [arr[i], arr[start]]; // Backtrack
+                [arr[start], arr[i]] = [arr[i], arr[start]]; 
             }
         }
     }
