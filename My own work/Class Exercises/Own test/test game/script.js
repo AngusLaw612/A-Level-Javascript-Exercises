@@ -1,4 +1,4 @@
-let playerl;
+let playerl
 let playerb ;
 let floor;
 let bullet ;
