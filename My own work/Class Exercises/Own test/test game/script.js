@@ -1,15 +1,4 @@
-let playerl
-let playerb 
-let floor
-let bullet 
-let slash 
-let slashing
-let health_point 
-let enemy,enemy_s,enemy_b
-let block
-let player
-let button, start
-let gg
+
 
 let doublejump = true 
 let right = true 
