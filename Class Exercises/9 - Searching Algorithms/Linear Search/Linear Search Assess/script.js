@@ -23,6 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
     //Write a linear search with the identifier studentSearch which takes two parameters
     //The array to be searched and the item searched for
     //return the index position of the item if found or -1 if not
+
+    function studentSearch(currentArray, target) {
+        let index = 0
+
+        while (index < currentArray.length){
+            if (currentArray[index] == target){
+                return index
+            }
+            index++
+        }
+        return -1
+    }
+
+
     
 
     generateButton.addEventListener("click", function () {

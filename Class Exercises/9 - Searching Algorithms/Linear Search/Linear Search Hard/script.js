@@ -21,14 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function studentSearch(array, target) {
-        let _____ = 0;
-        while (______________________) {
-            if (______________________) {
-                return _____;
+        let index = 0;
+        while (index < array.length) {
+            if (array[index] == target) {
+                return index;
             }
-            _________________;
+            index++;
         }
-        return _____;
+        return "404";
     }
     
     
