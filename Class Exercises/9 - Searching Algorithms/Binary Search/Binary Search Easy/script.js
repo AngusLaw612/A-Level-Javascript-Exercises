@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let left = 0;
         let right = array.length - 1;
     
-        while (left <= ______) {
+        while (left <= _____) {
             let mid = Math.floor((left + right) / 2);
             if (array[mid] === ______) {
                 return ______;

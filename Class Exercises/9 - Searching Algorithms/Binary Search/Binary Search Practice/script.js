@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchResult = document.getElementById("search-result");
 
     let currentArray = [];
-
+/*
     function generateRandomArray() {
         const array = [];
         const size = Math.floor(Math.random() * 5) + 5;
@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
             array.push(Math.floor(Math.random() * 100) + 1);
         }
         return array;
+    }
+        */
+    function generateRandomArray() {
+        return [1,2,3,4,5,6,7,8,9]
     }
 
     function displayArray(array) {
@@ -23,6 +27,25 @@ document.addEventListener("DOMContentLoaded", function () {
     //Write a binary search with the identifier studentSearch which takes two parameters
     //The array to be searched and the item searched for
     //return the index position of the item if found or -1 if not
+
+    function studentSearch(arr , target) {
+        let left = 0
+        let right = arr.length - 1 ;
+        let mid;
+        let foundIndex = -1
+
+        while (left <= right && foundIndex == -1 ) {
+            mid = Math.floor((left + right) /2);
+            if (arr[mid] === target) {
+                foundIndex = mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1
+            } else {
+                right = mid -1
+            }
+        } 
+        return foundIndex ; 
+    }
     
 
     generateButton.addEventListener("click", function () {
