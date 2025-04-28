@@ -32,13 +32,13 @@ document.addEventListener("DOMContentLoaded", function() {
         let swapped;
     
         do {
-            swapped = _______;
+            swapped = false;
             for (let i = 0; i < n - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     let temp = array[i];
-                    array[i] = array[i + ___];
+                    array[i] = array[i + 1];
                     array[i + 1] = temp;
-                    swapped = _______;
+                    swapped = true;
                 }
             }
             n--;

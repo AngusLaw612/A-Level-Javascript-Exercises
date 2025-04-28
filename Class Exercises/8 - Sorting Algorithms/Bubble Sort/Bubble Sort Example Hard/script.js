@@ -29,21 +29,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function bubbleSort(array) {
-        let ___ = array.________;
-        let _______;
+        let n = array.length;
+        let swapped;
     
         do {
-            _______ = false;
-            for (let i = 0; i < ___ - 1; i++) {
-                if (array[i] > array[___]) {
+            swapped = false;
+            for (let i = 0; i < n - 1; i++) {
+                if (array[i] > array[i + 1]) {
                     let temp = array[i];
-                    array[i] = array[___];
-                    array[___] = temp;
-                    _______ = true;
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    swapped  = true;
                 }
             }
-            ___--;
-        } while (_______);
+            n--;
+        } while (swapped);
     
         return array;
     }
