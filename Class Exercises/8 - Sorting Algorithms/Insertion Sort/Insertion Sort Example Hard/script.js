@@ -28,19 +28,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-function __________(______) {
-    for (let ___ = ___; ___ < ___.___; ___++) {
-        let ___ = ___[___];
-        let ___ = ___ - ___;
+function insertionSort(array) {
+    for (let i = 1; i < array.length; i++) {
+        let current = array[i];
+        let j = i - 1;
 
-        while (___ >= ___ && ___[___] > ___) {
-            ___[___ + ___] = ___[___];
-            ___--;
+        while (j >= 0 && array[j] > current) {
+            array[j + 1] = array[j];
+            j--;
         }
 
-        ___[___ + ___] = ___;
+        array[j + 1] = current;
     }
-    return ___;
+    return array;
 }
     
 

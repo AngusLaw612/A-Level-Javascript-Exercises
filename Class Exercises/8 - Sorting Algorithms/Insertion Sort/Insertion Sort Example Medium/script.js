@@ -29,16 +29,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function insertionSort(array) {
-    for (let ___ = 1; ___ < array.___; ___++) {
-        let ___ = array[___];
-        let ___ = ___ - 1;
+    for (let i = 1; i < array.length; i++) {
+        let current = array[i];
+        let j = i - 1;
 
-        while (___ >= 0 && array[___] > ___) {
-            array[___ + 1] = array[___];
-            ___--;
+        while (j >= 0 && array[j] > current ) {
+            array[j + 1] = array[j];
+            j--;
         }
 
-        array[___ + 1] = ___;
+        array[j + 1] = current;
     }
     return array;
 }

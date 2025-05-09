@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 function insertionSort(array) {
-    for (let ___ = 1; ___ < array.___; ___++) {
-        let current = array[___];
-        let j = ___ - 1;
+    for (let i = 1; i < array.length; i++) {
+        let current = array[i];
+        let j = i - 1;
 
         while (j >= 0 && array[j] > current) {
             array[j + 1] = array[j];
